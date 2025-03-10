@@ -1,0 +1,4 @@
+requests
+pandas
+selenium
+webdriver_manager
