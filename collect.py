@@ -14,7 +14,8 @@ def delete_all_files(directory):
                 os.remove(file_path)  # Delete the file
                 print(f"Deleted: {file_path}")
     else:
-        print("The specified directory does not exist.")
+        os.makedirs(directory)
+        print("Specified directory created")
 
 delete_all_files("./data")
 
