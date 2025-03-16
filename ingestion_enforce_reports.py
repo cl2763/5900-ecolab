@@ -2,14 +2,18 @@
 import requests
 import datetime
 import pandas as pd
+import os
 import re
 
 def request_recall(): 
     def clean_text(value):
-        """Remove non-printable characters from text fields"""
+        #Remove non-printable characters from text fields
         if isinstance(value, str):
             return re.sub(r'[\x00-\x1F\x7F-\x9F]', '', value)  # Remove control characters
         return value
+
+    user = os.environ.get('USER', 'default_value')
+    key = os.environ.get('ENFORCE_REPORT_KEY', 'default_value')
 
     # Create a signature and append it to the URL to avoid cached responses from server.
     signature = str(int(datetime.datetime.now().timestamp()))
@@ -21,8 +25,8 @@ def request_recall():
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization-User': 'yy2349@cornell.edu',
-        'Authorization-Key': '51SGPrb5q9rUuTiX'
+        'Authorization-User': user,
+        'Authorization-Key': key
     }
 
     # Columns to fetch

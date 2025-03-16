@@ -6,13 +6,13 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from webdriver_manager.firefox import GeckoDriverManager
 
-def download_483s():
+def download_w_letters():
     # ✅ Set up default and custom download paths
     custom_download_dir = os.path.abspath("./data")  # Custom save directory
     os.makedirs(custom_download_dir, exist_ok=True)  # Create folder if missing
 
     # ✅ Define the final filename for the most updated version
-    final_filename = "483s.xlsx"
+    final_filename = "warning_letters.xlsx"
     final_filepath = os.path.join(custom_download_dir, final_filename)
 
     # ✅ Function to clean up old files before downloading
@@ -35,7 +35,7 @@ def download_483s():
     driver = create_firefox_driver()
 
     # ✅ Open the webpage
-    url = "https://www.fda.gov/about-fda/office-inspections-and-investigations/oii-foia-electronic-reading-room"
+    url = "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/compliance-actions-and-activities/warning-letters"
     driver.get(url)
     time.sleep(5)  # Wait for page to load
 
@@ -83,3 +83,5 @@ def download_483s():
 
     # ✅ Close browser after confirmation
     driver.quit()
+
+download_w_letters()

@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 import os
 
-def request_inspection(endpoint: str): 
+def request_compliance(endpoint: str): 
     user = os.environ.get('USER', 'default_value')
     key = os.environ.get('FDA_DASHBOARD_KEY', 'default_value')
 
