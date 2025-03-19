@@ -81,7 +81,7 @@ def request_recall():
     # Apply cleaning function only to object (string) columns
     df = df.apply(lambda col: col.map(clean_text) if col.dtype == "object" else col)
 
-    # Save DataFrame to Excel
+    # Save DataFrame to Exceli
     file_path = "./data/recall_data.xlsx"
     df.to_excel(file_path, index=False)
 
