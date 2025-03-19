@@ -4,7 +4,7 @@ from pathlib import Path
 def filter_and_save_datasets():
     # Get the data directory paths
     data_dir = Path('data')
-    original_dir = data_dir / 'original'
+    original_dir = data_dir / 'original_csv'
     filtered_dir = data_dir / 'filtered'
     
     # Dictionary of filters for each dataset

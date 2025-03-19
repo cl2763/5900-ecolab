@@ -5,7 +5,7 @@ from pathlib import Path
 def convert_excel_to_csv():
     # Get the data directory paths
     data_dir = Path('data')
-    original_dir = data_dir / 'original'
+    original_dir = data_dir / 'original_csv'
     
     # Create original directory if it doesn't exist
     original_dir.mkdir(exist_ok=True)
